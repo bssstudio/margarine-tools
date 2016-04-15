@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 PATH=$PATH:/usr/bin
 
@@ -36,7 +36,7 @@ mountBtrfsRoot
 
 #delete old
 function deleteOld {
-    NUMSNAPS=`ls $SNAPDIR | wc -l` 
+    NUMSNAPS=`ls $SNAPDIR | wc -l`
     #echo Number of old snaps: $NUMSNAPS of $NSNAPS
     if [ "$NUMSNAPS" -gt "$NSNAPS" ]; then
 	DEL=`ls $SNAPDIR | sort | head -1`
